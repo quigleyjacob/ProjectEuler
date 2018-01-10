@@ -4,7 +4,8 @@ public class LargestPrimeFactor {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//long num = 600851475143;
+		//var num = 600851475143;
+		
 	}
 
 }
