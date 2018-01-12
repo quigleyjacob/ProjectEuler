@@ -2,14 +2,13 @@
 public class EvenFibonacci {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] fib = new int[100];
 		int first = 1;
 		int second = 2;
 		fib[0] = first;
 		fib[1] = second;
 		int sum = 0;
-		
+
 		for (int i = 2; i < fib.length; i++) {
 			int next = first + second;
 			first = second;
