@@ -6,7 +6,9 @@ public class LargestPrimeFactor {
 		for (long i = 1; i < n; i++) {
 			if (num % i == 0) {
 				num /= i;
-				System.out.println(num + " " + i);
+				if (num == 1) {
+					System.out.println(i);
+				}
 			}
 		}
 	}
