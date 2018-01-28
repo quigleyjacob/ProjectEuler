@@ -28,3 +28,10 @@ public class Palindrome {
         System.out.println(num1 + " * " + num2 + " = " + pal);
     }
 }
+
+
+int sum = 0;
+for (int i = 0; i <= 100; i++) {
+    sum = sum + i;
+}
+23 % 2
