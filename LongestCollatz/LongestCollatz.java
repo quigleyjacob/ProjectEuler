@@ -1,32 +1,37 @@
 public class LongestCollatz {
 
-  public static long collatz(int k) {
-    long original = k;
-    long count = 0;
-    while (k != 1) {
-      if (k % 2 == 0) {
-        k /= 2;
-      } else {
-        k = 3*k + 1;
-      }
-      count++;
+  public static long[] lengthOfSequence = new long[1000001];
+
+  public static long collatz(long k, long length) {
+  //  System.out.println(k);
+    if(k == 1) {
+      return ++length;
     }
-    return count;
+    if(k < lengthOfSequence.length && lengthOfSequence[(int)k] != 0) {
+      return length + lengthOfSequence[(int)k];
+    }
+    if (k % 2 == 0) {
+      return collatz(k/2, ++length);
+    }
+    else {
+      return collatz(3*k+1, ++length);
+    }
+    // return count;
   }
 
   public static void main(String[] args) {
 
     int n = 1000000;
-
-    long length = 0;
+    //System.out.println(collatz(13,0));
     long answer = 0;
 
-    for (int i = 1; i <= n; i+=2) {
-      long coll = collatz(i);
-      if (coll > length) {
-        length = coll;
-        answer = i;
-        System.out.println(length + " " + answer);
+    for (int i = 1; i <= n; i++) {
+      long check = collatz(i, 0);
+      lengthOfSequence[i] = check;
+      //System.out.println(check);
+      if(check > answer) {
+        System.out.println(i + " " + check);
+        answer = check;
       }
     }
     System.out.println(answer);
